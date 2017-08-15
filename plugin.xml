@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.edu.gj.kalmanfilter1.intro.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="卡尔曼滤波透视图"
+            class="com.edu.gj.kalmanfilter1.intro.Perspective"
+            id="com.edu.gj.kalmanFilter1.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.edu.gj.kalmanFilter1.application"
+            name="RCP Product of KalmanFilter">
+         <property
+               name="windowImages"
+               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png,icons/eclipse512.png">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+         <view 
+         id="com.edu.gj.kalmanFilter1.graphViewPart"
+         name="滤波结果视图"
+         class="com.edu.gj.kalmanfilter1.GraphView">
+         </view>
+         
+         <view
+         id="com.edu.gj.kalmanFilter1.editorView"
+         name = "编辑"
+         class = "com.edu.gj.kalmanfilter1.EditorView">
+         </view>
+    
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+         <editor
+         id="com.edu.gj.kalmanFilter1.editor"
+         name="初始值编辑器"
+         class="com.edu.gj.kalmanfilter1.Editor"
+         >
+         </editor>
+   </extension>
+
+
+</plugin>
